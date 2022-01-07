@@ -1,0 +1,23 @@
+smil3y@debian:~/stdround$ cmake .
+-- The CXX compiler identification is GNU 10.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/smil3y/stdround
+smil3y@debian:~/stdround$ make
+Scanning dependencies of target stdround_test
+[ 50%] Building CXX object CMakeFiles/stdround_test.dir/stdround_test.cpp.o
+/home/smil3y/stdround/stdround_test.cpp: In function ‘int main()’:
+/home/smil3y/stdround/stdround_test.cpp:4:31: warning: ‘undefined’ is used uninitialized in this function [-Wuninitialized]
+    4 |     int undefined = std::round(undefined);
+      |                     ~~~~~~~~~~^~~~~~~~~~~
+[100%] Linking CXX executable stdround_test
+[100%] Built target stdround_test
+smil3y@debian:~/stdround$ ./stdround_test 
+smil3y@debian:~/stdround$ echo $?
+0
+smil3y@debian:~/stdround$
